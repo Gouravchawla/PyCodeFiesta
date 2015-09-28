@@ -1,0 +1,18 @@
+""" To print a pattern like below:
+    *****
+    *   *
+    *   *
+    *   *
+    *****
+"""
+
+
+for i in range(5):
+    for j in range(5):
+        if(i==0 or i==4):
+            print("*", end = '')    #end= '' doesn't let it go to next line everytime it prints *
+        elif(j==0 or j==4):
+            print("*", end = '')
+        else:
+            print(" ", end = '')
+    print("\n")
