@@ -1,7 +1,7 @@
 """ This is a basic calculator with GUI built using Tkinter """
 #Author: Gourav Chawla
 #Ver: 0.0
-#Status: Not yed completed
+#Status: Not yet completed
 
 
 # ****Imports****
@@ -30,12 +30,28 @@ root = Tk()
 root.minsize(width = 300, height = 500)
 root.maxsize(width = 300, height = 500)
 
-displayFrame = Frame(root, bg = "#ccc")
-displayFrame.grid(row = 0)
+labelFrame = Frame(root)
+labelFrame.pack(side = LEFT)
 
-buttonFrame = Frame(root, bg = "blue")
-buttonFrame.grid(row = 1)
+inputFrame = Frame(root)
+inputFrame.pack(side = RIGHT)
 
+number1 = Label(labelFrame, text="Number 1:")
+number1.pack()
+
+number1_entry = Entry(inputFrame)
+number1_entry.pack()
+
+
+number2 = Label(labelFrame,text = "Number 2:")
+number2.pack()
+
+number2_entry = Entry(inputFrame)
+number2_entry.pack()
+
+
+resultLabel = Label(root,text="Result:")
+resultLabel.pack()
 
 
 #****Trying to dynamically create buttons****
