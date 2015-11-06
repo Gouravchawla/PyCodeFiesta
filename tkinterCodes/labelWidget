@@ -1,0 +1,19 @@
+# Example to test the different properties of Label widget
+# http://effbot.org/tkinterbook/label.htm#label.Label.config-method
+# http://www.tutorialspoint.com/python/tk_label.htm
+
+from tkinter import *
+
+root = Tk()
+
+# textvariable,width, relief = RIDGE | SUNKEN | FLAT:default | GROOVE | RAISED
+var = StringVar()
+var.set("Hey, this text is set using StringVar variable.\nHey, this text is set using StringVar variable.\nHey, this text is set using StringVar variable. Hey, this text is set using StringVar variable. \nHey, this text is set using StringVar variable \ney, this text is set using StringVar variable.")
+
+label = Label(root, textvariable=var, relief=RIDGE, width=100, anchor=SW)
+label.pack()
+
+
+
+
+root.mainloop()
