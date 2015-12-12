@@ -1,0 +1,61 @@
+[1mdiff --git a/Calculator/Calculator.py b/Calculator/Calculator.py[m
+[1mindex 8eaf541..c46cf44 100644[m
+[1m--- a/Calculator/Calculator.py[m
+[1m+++ b/Calculator/Calculator.py[m
+[36m@@ -22,6 +22,9 @@[m [mclass Calculator:[m
+         return num1 / num2[m
+ [m
+ [m
+[32m+[m
+[32m+[m[32mob = Calculator()[m
+[32m+[m
+ # ****GUI Code****[m
+ [m
+ root = Tk()[m
+[36m@@ -30,30 +33,41 @@[m [mroot = Tk()[m
+ root.minsize(width = 300, height = 500)[m
+ root.maxsize(width = 300, height = 500)[m
+ [m
+[32m+[m
+[32m+[m[32m# Frame : labelFrame[m
+ labelFrame = Frame(root)[m
+ labelFrame.pack(side = LEFT)[m
+ [m
+[32m+[m
+[32m+[m[32m# Frame : inputFrame[m
+ inputFrame = Frame(root)[m
+ inputFrame.pack(side = RIGHT)[m
+ [m
+[32m+[m
+ number1 = Label(labelFrame, text="Number 1:")[m
+ number1.pack()[m
+ [m
+[31m-number1_entry = Entry(inputFrame)[m
+[31m-number1_entry.pack()[m
+[31m-[m
+[31m-[m
+ number2 = Label(labelFrame,text = "Number 2:")[m
+ number2.pack()[m
+ [m
+[32m+[m[32mresultButton = Button(labelFrame,text="Result:", command = lambda:ob.add(int(number1)+int(number2)))[m
+[32m+[m[32mresultButton.pack(side = LEFT)[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mnumber1_entry = Entry(inputFrame)[m
+[32m+[m[32mnumber1_entry.pack()[m
+[32m+[m
+ number2_entry = Entry(inputFrame)[m
+ number2_entry.pack()[m
+ [m
+ [m
+[31m-resultLabel = Label(root,text="Result:")[m
+[32m+[m[32mresultLabel = Label(inputFrame, text=resultButton.cget("command"))[m
+ resultLabel.pack()[m
+ [m
+ [m
+[32m+[m
+[32m+[m
+ #****Trying to dynamically create buttons****[m
+ #for i in range(17,27):[m
+ #   (button + str(i)) = Button(root, text = str(i))[m

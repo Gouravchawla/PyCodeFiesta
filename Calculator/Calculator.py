@@ -22,6 +22,9 @@ class Calculator:
         return num1 / num2
 
 
+
+ob = Calculator()
+
 # ****GUI Code****
 
 root = Tk()
@@ -30,28 +33,39 @@ root = Tk()
 root.minsize(width = 300, height = 500)
 root.maxsize(width = 300, height = 500)
 
+
+# Frame : labelFrame
 labelFrame = Frame(root)
 labelFrame.pack(side = LEFT)
 
+
+# Frame : inputFrame
 inputFrame = Frame(root)
 inputFrame.pack(side = RIGHT)
+
 
 number1 = Label(labelFrame, text="Number 1:")
 number1.pack()
 
-number1_entry = Entry(inputFrame)
-number1_entry.pack()
-
-
 number2 = Label(labelFrame,text = "Number 2:")
 number2.pack()
+
+resultButton = Button(labelFrame,text="Result:", command = lambda:ob.add(int(number1)+int(number2)))
+resultButton.pack(side = LEFT)
+
+
+
+number1_entry = Entry(inputFrame)
+number1_entry.pack()
 
 number2_entry = Entry(inputFrame)
 number2_entry.pack()
 
 
-resultLabel = Label(root,text="Result:")
+resultLabel = Label(inputFrame, text=resultButton.cget("command"))
 resultLabel.pack()
+
+
 
 
 #****Trying to dynamically create buttons****
